@@ -1,4 +1,4 @@
-<script setup>
+<script>
 import { store } from '.store/store.js';
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
