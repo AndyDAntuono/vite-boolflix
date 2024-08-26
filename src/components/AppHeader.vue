@@ -1,5 +1,5 @@
 <template>
-    <div class="container bg-dark py-2">
+    <div class="container bg-dark py-2 mb-3">
         <header>
             <div class="row">
                 <div class="col-4">
