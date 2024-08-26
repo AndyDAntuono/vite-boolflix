@@ -1,12 +1,12 @@
 <script>
-import { store } from '.store/store.js';
+//import { store } from '.store/store.js';
 import AppHeader from './components/AppHeader.vue';
-import AppMain from './components/AppMain.vue';
+//import AppMain from './components/AppMain.vue';
 
 export default {
   components: {
     AppHeader,
-    AppMain,
+    //AppMain,
   },
   created() {
     //nome metodi
@@ -16,7 +16,7 @@ export default {
   },
   data() {
     return {
-      store,
+      //store,
     }
   }
 }
