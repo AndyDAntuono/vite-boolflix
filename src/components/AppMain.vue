@@ -4,7 +4,9 @@
             <div class="row">
                 <div class="col-3">
                     <div class="card">
-                        <img src="" alt="film-img">
+                        <div class="border rounded  w-90 m-1">
+                            <img src="" alt="film-img">
+                        </div>
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">Titolo film</li>
