@@ -1,4 +1,5 @@
 <script>
+import axios from 'axios';
 import AppHeader from './components/AppHeader.vue'
 import AppMain from './components/AppMain.vue'
 
@@ -10,13 +11,8 @@ export default {
   data() {
     return {
       searchQuery: "",
-      movies: [
-        { id: 1, title: "Inception" },
-        { id: 2, title: "Interstellar" },
-        { id: 3, title: "The Dark Knight" },
-        { id: 4, title: "Parasite" },
-        { id: 5, title: "Joker" }
-      ]
+      movies: [],
+      allMovies: []
     };
   },
   computed: {
