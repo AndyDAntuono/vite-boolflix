@@ -1,5 +1,6 @@
 <script>
-//import { store } from '.store/store.js';
+import { store } from '.store/store.js';
+import axios from 'axios';
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 
@@ -9,14 +10,18 @@ export default {
     AppMain,
   },
   created() {
-    //nome metodi
+    this.findFilm()
   },
   methods: {
-    //searchfilm? selectfilm?
+    findFilm(){
+      axios.get(store.apiFilmsUrl).then((result) => {
+        store.filmList = result.results;
+      });
+    }
   },
   data() {
     return {
-      //store,
+      store,
     }
   }
 }
