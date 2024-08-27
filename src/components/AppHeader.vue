@@ -1,6 +1,7 @@
 <template>
     <div class="container bg-dark py-2 mb-3">
         <header>
+            <!--
             <div class="row">
                 <div class="col-4">
                     <div class="d-flex justify-content-center align-items-center">
@@ -16,14 +17,26 @@
                     </div>
                 </div>
             </div>
+            -->
+            <input type="text" v-model="searchQuery" placeholder="Cerca un film..."/>
+            <button @click="onSearch">Cerca</button>
         </header>
     </div>
 </template>
 
 <script>
 export default {
-    
-}
+  data() {
+    return {
+      searchQuery: ""
+    };
+  },
+  methods: {
+    onSearch() {
+      this.$emit("update-search", this.searchQuery);
+    }
+  }
+};
 </script>
 <style lang="">
     

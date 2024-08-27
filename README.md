@@ -96,3 +96,5 @@ Consigli:
  4. Per avere la lista delle lingue utilizzare:
  https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 
+NOTE PER I TUTOR per la modifica del 28-08-24, ore 00:08: ho praticamente riscritto la maggior parte del codice poiché sono andato
+in cofusione e ho cercato di semplificare il codice.
