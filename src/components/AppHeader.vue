@@ -10,10 +10,10 @@
                 </div>
                 <div class="col-8">
                     <div>
-                        <form class="form-inline my-2 my-lg-0">
-                            <input class="d-inline form-control mr-sm-2 w-75" type="search" v-model="store.filmCard" placeholder="Search" aria-label="Search">
-                            <button class="d-inline btn btn-outline-success ms-2 my-2 my-sm-0" type="submit" @click="onSearch">Search</button>
-                        </form>
+                        <div class="my-2 my-lg-0">
+                            <input class="d-inline form-control mr-sm-2 w-75" type="text" v-model="searchQuery" placeholder="Cerca un film...">
+                            <button class="d-inline btn btn-outline-success ms-2 my-2 my-sm-0" @click="onSearch">Search</button>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -19,9 +19,20 @@
                     </div>
                 </div>
                 -->
-                <ul>
-                    <li v-for="movie in movies" :key="movie.id">{{ movie.title }}</li>
-                  </ul>
+                <ul v-for="movie in movies" :key="movie.id">
+                  <li>{{ movie.title }}</li>
+                  <li>{{ movie.original_title }}</li>
+                  <li>{{ movie.original_language }}</li>
+                  <li>{{ movie.vote_average }}</li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul v-for="tvShow in tvShows" :key="tvShow.id">
+                    <li>{{ tvShow.title }}</li>
+                    <li>{{ tvShow.original_title }}</li>
+                    <li>{{ tvShow.original_language }}</li>
+                    <li>{{ tvShow.vote_average }}</li>
+                </ul>
             </div>
         </div>
     </main>
@@ -30,10 +41,9 @@
 <script>
 export default {
   props: {
-    movies: {
-      type: Array,
-      required: true
-    }
+    //i TIPI di dato hanno la lettera INIZIALE in MAIUSCOLO!
+    movies: Object,
+    tvShows: Object,
   }
 };
 </script>

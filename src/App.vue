@@ -3,6 +3,8 @@ import axios from 'axios';
 import AppHeader from './components/AppHeader.vue'
 import AppMain from './components/AppMain.vue'
 
+import { store } from './store.js';
+
 export default {
   components: {
     AppHeader,
@@ -10,21 +12,37 @@ export default {
   },
   data() {
     return {
+      store,
       searchQuery: "",
       movies: [],
-      allMovies: []
-    };
-  },
+      allMovies: [],
+      tvShows: [],
+      allTvShows: [],
+      }
+    },
   computed: {
     filteredMovies() {
       return this.movies.filter(movie =>
         movie.title.toLowerCase().includes(this.searchQuery.toLowerCase())
       );
-    }
+    },
+    filteredTvShows() {
+      return this.tvShows.filter(tvShows =>
+        tvShows.title.toLowerCase().includes(this.searchQuery.toLowerCase())
+      );
+    },
   },
   methods: {
     updateSearchQuery(query) {
-      this.searchQuery = query;
+      // this.searchQuery = query;
+      axios.get(store.apiFilmsUrl+""+query).then((response) => {
+        // console.log(response.data)
+        this.movies = response.data.results
+      });
+      axios.get(store.apiTvShowsUrl).then((response) => {
+        // console.log(response.data)
+        this.tvShows = response.data.results
+      });
     }
   }
 };
@@ -74,7 +92,10 @@ export default {
 <template>
   <div id="app">
     <AppHeader @update-search="updateSearchQuery" />
-    <AppMain :movies="filteredMovies" />
+    <AppMain 
+    :movies="filteredMovies" 
+    :tvShows="filteredTvShows"
+    />
   </div>
 </template>
 
