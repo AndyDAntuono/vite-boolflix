@@ -19,6 +19,7 @@
                     </div>
                 </div>
                 -->
+                <h2>FILM</h2>
                 <ul v-for="movie in movies" :key="movie.id">
                   <li>{{ movie.title }}</li>
                   <li>{{ movie.original_title }}</li>
@@ -27,9 +28,10 @@
                 </ul>
             </div>
             <div class="row">
+                <h2>Telefilm</h2>
                 <ul v-for="tvShow in tvShows" :key="tvShow.id">
-                    <li>{{ tvShow.title }}</li>
-                    <li>{{ tvShow.original_title }}</li>
+                    <li>{{ tvShow.name }}</li>
+                    <li>{{ tvShow.original_name }}</li>
                     <li>{{ tvShow.original_language }}</li>
                     <li>{{ tvShow.vote_average }}</li>
                 </ul>
