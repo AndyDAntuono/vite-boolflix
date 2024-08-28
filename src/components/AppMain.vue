@@ -2,23 +2,25 @@
     <main>
         <div class="container">
             <div class="row">
-                <div class="col-3">
-                    <h2>FILM</h2>
-                    <div class="card" v-for="movie in movies" :key="movie.id">
-                        <div class="poster border rounded  w-90 m-1">
-                            <img class="poster-img" :src="` https://image.tmdb.org/t/p/w342/${movie.poster_path}`" alt="poster">
-                        </div>
-                        <div class="info card-body">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">{{ movie.title }}</li>
-                                <li class="list-group-item">{{ movie.original_title }}</li>
-                                <li class="list-group-item">{{ movie.original_language }} <img class="flag-w" :src="`../../public/flags/${movie.original_language}.svg`" alt=""></li>
-                                <li class="list-group-item">
-                                    <span v-for="star in getStars(movie.vote_average)" :key="star" class="fa-solid fa-star"</span>
-                                    <span v-for="emptyStar in 5 - getStars(movie.vote_average)" :key="emptyStar" class="fa-regular fa-star"></span>
-                                </li>
-                                <li class="list-group-item">{{movie.overview}}</li>
-                              </ul>
+                <h2>FILM</h2>
+                <div class="d-flex">
+                    <div class="col-3"  v-for="movie in movies" :key="movie.id">
+                        <div class="card">
+                            <div class="poster border rounded  w-90 m-1">
+                                <img class="poster-img" :src="` https://image.tmdb.org/t/p/w342/${movie.poster_path}`" alt="poster">
+                            </div>
+                            <div class="info card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">{{ movie.title }}</li>
+                                    <li class="list-group-item">{{ movie.original_title }}</li>
+                                    <li class="list-group-item">{{ movie.original_language }} <img class="flag-w" :src="`../../public/flags/${movie.original_language}.svg`" alt=""></li>
+                                    <li class="list-group-item">
+                                        <span v-for="star in getStars(movie.vote_average)" :key="star" class="fa-solid fa-star"</span>
+                                        <span v-for="emptyStar in 5 - getStars(movie.vote_average)" :key="emptyStar" class="fa-regular fa-star"></span>
+                                    </li>
+                                    <li class="list-group-item">{{movie.overview}}</li>
+                                  </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -37,18 +39,40 @@
                 -->
             </div>
             <div class="row">
-                <h2>Telefilm</h2>
+                <h2>TELEFILM</h2>
+                <div class="d-flex wrap mt-3" >
+                    <div class="col-3" v-for="tvShow in tvShows" :key="tvShow.id">
+                        <div class="card">
+                            <div class="poster border rounded  w-90 m-1">
+                                <img class="poster-img" :src="` https://image.tmdb.org/t/p/w342/${tvShow.poster_path}`" alt="poster">
+                            </div>
+                            <div class="info card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">{{ tvShow.name }}</li>
+                                    <li class="list-group-item">{{ tvShow.original_name }}</li>
+                                    <li class="list-group-item">{{ tvShow.original_language }} <img class="flag-w" :src="`../../public/flags/${tvShow.original_language}.svg`" alt=""></li>
+                                    <li class="list-group-item">
+                                        <span v-for="star in getStars(tvShow.vote_average)" :key="star" class="fa-solid fa-star"</span>
+                                        <span v-for="emptyStar in 5 - getStars(tvShow.vote_average)" :key="emptyStar" class="fa-regular fa-star"></span>
+                                    </li>
+                                    <li class="list-group-item">{{tvShow.overview}}</li>
+                                  </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--
                 <ul v-for="tvShow in tvShows" :key="tvShow.id">
                     <li><img :src="` https://image.tmdb.org/t/p/w342/${tvShow.poster_path}`" alt="poster"></li>
                     <li>{{ tvShow.name }}</li>
                     <li>{{ tvShow.original_name }}</li>
                     <li>{{ tvShow.original_language }} <img class="flag-w" :src="`../../public/flags/${tvShow.original_language}.svg`" alt=""></li>
-                    <!--<li>{{ tvShow.vote_average }}</li>-->
                     <li>
                         <span v-for="star in getStars(tvShow.vote_average)" :key="star" class="fa-solid fa-star"></span>
                         <span v-for="emptyStar in 5 - getStars(tvShow.vote_average)" :key="emptyStar" class="fa-regular fa-star"></span>
                     </li>
                 </ul>
+                -->
             </div>
         </div>
     </main>
