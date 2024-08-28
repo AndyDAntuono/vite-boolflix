@@ -5,10 +5,10 @@
                 <div class="col-3">
                     <h2>FILM</h2>
                     <div class="card" v-for="movie in movies" :key="movie.id">
-                        <div class="border rounded  w-90 m-1">
+                        <div class="poster border rounded  w-90 m-1">
                             <img class="poster-img" :src="` https://image.tmdb.org/t/p/w342/${movie.poster_path}`" alt="poster">
                         </div>
-                        <div class="card-body">
+                        <div class="info card-body">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">{{ movie.title }}</li>
                                 <li class="list-group-item">{{ movie.original_title }}</li>
@@ -17,6 +17,7 @@
                                     <span v-for="star in getStars(movie.vote_average)" :key="star" class="fa-solid fa-star"</span>
                                     <span v-for="emptyStar in 5 - getStars(movie.vote_average)" :key="emptyStar" class="fa-regular fa-star"></span>
                                 </li>
+                                <li class="list-group-item">{{movie.overview}}</li>
                               </ul>
                         </div>
                     </div>
@@ -64,8 +65,20 @@ export default {
 };
 </script>
 <style lang="scss">
+    .poster {
+        display: block;
+    }
     .poster-img {
         width: 100%;
+    }
+    .info {
+        display: none;
+    }
+    .card:hover .poster {
+        display: none;
+    }
+    .card:hover .info  {
+        display: block;
     }
     .flag-w {
         width: 30px;
