@@ -2,35 +2,38 @@
     <main>
         <div class="container">
             <div class="row">
-                <!--
                 <div class="col-3">
-                    <div class="card" v-for="film in store.filmList" :key="film.id">
+                    <h2>FILM</h2>
+                    <div class="card" v-for="movie in movies" :key="movie.id">
                         <div class="border rounded  w-90 m-1">
-                            <img src="" alt="film-img">
+                            <img class="poster-img" :src="` https://image.tmdb.org/t/p/w342/${movie.poster_path}`" alt="poster">
                         </div>
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">{{film.title}} </li>
-                                <li class="list-group-item">{{film.original_title}} </li>
-                                <li class="list-group-item">{{film.original_language}}</li>
-                                <li class="list-group-item">Voto</li>
+                                <li class="list-group-item">{{ movie.title }}</li>
+                                <li class="list-group-item">{{ movie.original_title }}</li>
+                                <li class="list-group-item">{{ movie.original_language }} <img class="flag-w" :src="`../../public/flags/${movie.original_language}.svg`" alt=""></li>
+                                <li class="list-group-item">
+                                    <span v-for="star in getStars(movie.vote_average)" :key="star" class="fa-solid fa-star"</span>
+                                    <span v-for="emptyStar in 5 - getStars(movie.vote_average)" :key="emptyStar" class="fa-regular fa-star"></span>
+                                </li>
                               </ul>
                         </div>
                     </div>
                 </div>
-                -->
+                <!--
                 <h2>FILM</h2>
                 <ul v-for="movie in movies" :key="movie.id">
                     <li><img :src="` https://image.tmdb.org/t/p/w342/${movie.poster_path}`" alt="poster"></li>
                     <li>{{ movie.title }}</li>
                     <li>{{ movie.original_title }}</li>
                     <li>{{ movie.original_language }} <img class="flag-w" :src="`../../public/flags/${movie.original_language}.svg`" alt=""></li>
-                    <!--<li>{{ movie.vote_average }}</li>-->
                     <li>
                         <span v-for="star in getStars(movie.vote_average)" :key="star" class="fa-solid fa-star"</span>
                         <span v-for="emptyStar in 5 - getStars(movie.vote_average)" :key="emptyStar" class="fa-regular fa-star"></span>
                     </li>
                 </ul>
+                -->
             </div>
             <div class="row">
                 <h2>Telefilm</h2>
@@ -61,6 +64,9 @@ export default {
 };
 </script>
 <style lang="scss">
+    .poster-img {
+        width: 100%;
+    }
     .flag-w {
         width: 30px;
     };

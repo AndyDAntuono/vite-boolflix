@@ -1,7 +1,6 @@
 <template>
     <div class="container bg-dark py-2 mb-3">
         <header>
-            <!--
             <div class="row">
                 <div class="col-4">
                     <div class="d-flex justify-content-center align-items-center">
@@ -12,14 +11,15 @@
                     <div>
                         <div class="my-2 my-lg-0">
                             <input class="d-inline form-control mr-sm-2 w-75" type="text" v-model="searchQuery" placeholder="Cerca un film...">
-                            <button class="d-inline btn btn-outline-success ms-2 my-2 my-sm-0" @click="onSearch">Search</button>
+                            <button class="d-inline btn btn-outline-success ms-2 my-2 my-sm-0" @click="onSearch">Cerca</button>
                         </div>
                     </div>
                 </div>
             </div>
-            -->
+            <!--
             <input type="text" v-model="searchQuery" placeholder="Cerca un film..."/>
             <button @click="onSearch">Cerca</button>
+            -->
         </header>
     </div>
 </template>
