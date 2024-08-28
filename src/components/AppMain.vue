@@ -23,7 +23,7 @@
                 <ul v-for="movie in movies" :key="movie.id">
                   <li>{{ movie.title }}</li>
                   <li>{{ movie.original_title }}</li>
-                  <li>{{ movie.original_language }}</li>
+                  <li>{{ movie.original_language }} <img class="flag-w" :src="`../../public/flags/${movie.original_language}.svg`" alt=""></li>
                   <li>{{ movie.vote_average }}</li>
                 </ul>
             </div>
@@ -32,7 +32,7 @@
                 <ul v-for="tvShow in tvShows" :key="tvShow.id">
                     <li>{{ tvShow.name }}</li>
                     <li>{{ tvShow.original_name }}</li>
-                    <li>{{ tvShow.original_language }}</li>
+                    <li>{{ tvShow.original_language }} <img class="flag-w" :src="`../../public/flags/${tvShow.original_language}.svg`" alt=""></li>
                     <li>{{ tvShow.vote_average }}</li>
                 </ul>
             </div>
@@ -49,6 +49,8 @@ export default {
   }
 };
 </script>
-<style lang="">
-    
+<style lang="scss">
+    .flag-w {
+        width: 30px;
+    }
 </style>
