@@ -34,15 +34,25 @@ export default {
   },
   methods: {
     updateSearchQuery(query) {
-      // this.searchQuery = query;
-      axios.get(store.apiFilmsUrl+""+query).then((response) => {
+       this.searchQuery = query;
+       axios.all([
+        axios.get(store.apiFilmsUrl+""+query),
+        axios.get(store.apiTvShowsUrl+""+query)
+       ])
+       .then(axios.spread((response1, response2) => {
+        console.log('Risultato della prima chiamata:',response1.data)
+        this.movies = response1.data.results;
+        console.log('Risultato della prima chiamata:',response1.data)
+        this.tvShows = response2.data.results;
+       }));
+      //axios.get(store.apiFilmsUrl+""+query).then((response) => {
         // console.log(response.data)
-        this.movies = response.data.results
-      });
-      axios.get(store.apiTvShowsUrl).then((response) => {
+      //  this.movies = response.data.results
+      //});
+      //axios.get(store.apiTvShowsUrl).then((response) => {
         // console.log(response.data)
-        this.tvShows = response.data.results
-      });
+        //this.tvShows = response.data.results
+      //});
     }
   }
 };
