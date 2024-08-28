@@ -21,10 +21,11 @@
                 -->
                 <h2>FILM</h2>
                 <ul v-for="movie in movies" :key="movie.id">
-                  <li>{{ movie.title }}</li>
-                  <li>{{ movie.original_title }}</li>
-                  <li>{{ movie.original_language }} <img class="flag-w" :src="`../../public/flags/${movie.original_language}.svg`" alt=""></li>
-                  <li>{{ movie.vote_average }}</li>
+                    <li><img :src="` https://image.tmdb.org/t/p/w342/${movie.poster_path}`" alt=""></li>
+                    <li>{{ movie.title }}</li>
+                    <li>{{ movie.original_title }}</li>
+                    <li>{{ movie.original_language }} <img class="flag-w" :src="`../../public/flags/${movie.original_language}.svg`" alt=""></li>
+                    <li>{{ movie.vote_average }}</li>
                 </ul>
             </div>
             <div class="row">
