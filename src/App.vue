@@ -31,8 +31,11 @@ export default {
         console.log(response.data)
         this.tvShows = response.data.results
       });
+    },
+    getStars(vote) {
+      return Math.ceil(vote / 2); // Divide il voto per 2 e arrotonda per eccesso
     }
-  }
+  },
 };
 </script>
 
@@ -42,6 +45,7 @@ export default {
     <AppMain 
     :movies="movies" 
     :tvShows="tvShows"
+    :getStars="getStars"
     />
   </div>
 </template>
