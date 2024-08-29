@@ -38,7 +38,7 @@
             </div>
             <div class="row">
                 <h2>TELEFILM</h2>
-                <div class="d-flex wrap mt-3" >
+
                     <div class="col-3" v-for="tvShow in tvShows" :key="tvShow.id">
                         <div class="card">
                             <div class="poster border rounded  w-90 m-1">
@@ -58,7 +58,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
                 <!--
                 <ul v-for="tvShow in tvShows" :key="tvShow.id">
                     <li><img :src="` https://image.tmdb.org/t/p/w342/${tvShow.poster_path}`" alt="poster"></li>
