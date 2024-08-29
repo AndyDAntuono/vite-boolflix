@@ -3,7 +3,6 @@
         <div class="container">
             <div class="row">
                 <h2>FILM</h2>
-                <div class="d-flex">
                     <div class="col-3"  v-for="movie in movies" :key="movie.id">
                         <div class="card">
                             <div class="poster border rounded  w-90 m-1">
@@ -23,7 +22,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
                 <!--
                 <h2>FILM</h2>
                 <ul v-for="movie in movies" :key="movie.id">
